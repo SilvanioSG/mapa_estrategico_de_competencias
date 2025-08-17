@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Executivo Interativo - Silvanio Gois</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; color:#333; }
+    header { background:#27628d; color:#fff; padding:15px 20px; text-align:center; font-size:14px; line-height:1.5; position:sticky; top:0; z-index:100;}
+    .objetivo-relatorio { background:#e0f0ff; color:#27628d; margin:20px auto; padding:15px 20px; max-width:900px; border-left:5px solid #27628d; border-radius:6px; font-size:15px; text-align:left; }
+    .filters { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:15px 0; }
+    .filters button { padding:8px 12px; border:none; border-radius:6px; cursor:pointer; font-weight:bold; background:#27628d; color:white; transition:0.3s; }
+    .filters button.active, .filters button:hover { background:#1e90ff; }
+    main { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin:0 10px 30px 10px; }
+    .quadrante { width:280px; background:#fff; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); padding:15px; transition:0.3s; cursor:default; color:#333; }
+    .quadrante h2 { font-size:16px; margin-bottom:6px; display:flex; align-items:center; gap:6px; color:white; padding:6px 10px; border-radius:6px; }
+    .quadrante p { font-size:13px; margin:4px 0; }
+    .objetivos h2 { background:#1e90ff; }
+    .decisao h2 { background:#ff6f61; }
+    .comunicacao h2 { background:#28a745; }
+    .recursos h2 { background:#ffa500; }
+    .planejamento h2 { background:#6a5acd; }
+    .lideranca h2 { background:#20b2aa; }
+    .delegacao h2 { background:#ff4500; }
+    .feedback h2 { background:#dc143c; }
+    .hidden { display:none; }
+    footer { background:#27628d; color:white; text-align:center; padding:15px; font-size:14px; }
+    footer a { color:white; text-decoration:underline; }
+    @media(max-width:700px){ main{flex-direction:column; align-items:center;} }
+</style>
+</head>
+<body>
+
+<header>
+Silvanio Gois — Técnico em Administração e Edificações | Graduando em Processos Gerenciais | sg@silvaniogois.com.br | www.silvaniogois.com.br
+</header>
+
+<div class="objetivo-relatorio">
+<strong>Objetivo deste relatório:</strong> Consolidar competências de gestão e produtividade com conteúdo completo, exemplos, alertas e insights estratégicos, permitindo decisões rápidas e verticalização do desempenho.
+</div>
+
+<div class="filters">
+    <button class="active" onclick="filterCategory('all')">Todos</button>
+    <button onclick="filterCategory('objetivos')">Objetivos</button>
+    <button onclick="filterCategory('decisao')">Decisão</button>
+    <button onclick="filterCategory('comunicacao')">Comunicação</button>
+    <button onclick="filterCategory('recursos')">Recursos</button>
+    <button onclick="filterCategory('planejamento')">Planejamento</button>
+    <button onclick="filterCategory('lideranca')">Liderança</button>
+    <button onclick="filterCategory('delegacao')">Delegação</button>
+    <button onclick="filterCategory('feedback')">Feedback</button>
+</div>
+
+<main>
+    <!-- Clareza de Objetivos -->
+    <div class="quadrante objetivos">
+        <h2><i class="fas fa-bullseye"></i> Clareza de Objetivos</h2>
+        <p><strong>Descrição:</strong> Definir metas claras e prioridades para a equipe.</p>
+        <p><strong>Exemplo:</strong> Metas trimestrais mensuráveis.</p>
+        <p><strong>Vantagens:</strong> Maior foco, menos improviso, alinhamento da equipe.</p>
+        <p><strong>Desvantagens:</strong> Metas mal definidas geram confusão e retrabalho.</p>
+        <p><strong>Alerta:</strong> Revisar objetivos periodicamente para manter relevância.</p>
+    </div>
+
+    <!-- Tomada de Decisão -->
+    <div class="quadrante decisao">
+        <h2><i class="fas fa-gavel"></i> Tomada de Decisão</h2>
+        <p><strong>Descrição:</strong> Decidir com objetividade e base em dados.</p>
+        <p><strong>Exemplo:</strong> Analisar indicadores antes de aprovar projetos.</p>
+        <p><strong>Vantagens:</strong> Reduz procrastinação e aumenta confiança da equipe.</p>
+        <p><strong>Desvantagens:</strong> Decisões impulsivas podem prejudicar resultados.</p>
+        <p><strong>Alerta:</strong> Evitar agir sem informações completas.</p>
+    </div>
+
+    <!-- Comunicação -->
+    <div class="quadrante comunicacao">
+        <h2><i class="fas fa-comments"></i> Comunicação</h2>
+        <p><strong>Descrição:</strong> Clareza e empatia na comunicação da equipe.</p>
+        <p><strong>Exemplo:</strong> Reuniões semanais curtas e relatórios claros.</p>
+        <p><strong>Vantagens:</strong> Engajamento, alinhamento e menos retrabalho.</p>
+        <p><strong>Desvantagens:</strong> Excesso de informações pode confundir.</p>
+        <p><strong>Alerta:</strong> Monitorar volume de comunicação para evitar sobrecarga.</p>
+    </div>
+
+    <!-- Gestão de Recursos -->
+    <div class="quadrante recursos">
+        <h2><i class="fas fa-cogs"></i> Gestão de Recursos</h2>
+        <p><strong>Descrição:</strong> Organizar tempo, equipe e materiais de forma eficiente.</p>
+        <p><strong>Exemplo:</strong> Planilhas, softwares e checklists para acompanhamento.</p>
+        <p><strong>Vantagens:</strong> Maior produtividade e eficiência.</p>
+        <p><strong>Desvantagens:</strong> Má gestão leva a sobrecarga e atrasos.</p>
+        <p><strong>Alerta:</strong> Monitorar periodicamente para ajustes contínuos.</p>
+    </div>
+
+    <!-- Planejamento Estratégico -->
+    <div class="quadrante planejamento">
+        <h2><i class="fas fa-chart-line"></i> Planejamento Estratégico</h2>
+        <p><strong>Descrição:</strong> Planejamento claro de curto e longo prazo.</p>
+        <p><strong>Exemplo:</strong> Mapear objetivos anuais e indicadores.</p>
+        <p><strong>Vantagens:</strong> Menos improvisação, foco e direção clara.</p>
+        <p><strong>Desvantagens:</strong> Falta de revisão pode tornar plano obsoleto.</p>
+        <p><strong>Alerta:</strong> Revisar planos trimestralmente.</p>
+    </div>
+
+    <!-- Liderança Situacional -->
+    <div class="quadrante lideranca">
+        <h2><i class="fas fa-users"></i> Liderança Situacional</h2>
+        <p><strong>Descrição:</strong> Adaptar estilo conforme maturidade da equipe.</p>
+        <p><strong>Exemplo:</strong> Ajustar abordagem entre coaching, suporte e delegação.</p>
+        <p><strong>Vantagens:</strong> Motivação e engajamento aumentados.</p>
+        <p><strong>Desvantagens:</strong> Aplicar um único estilo reduz performance.</p>
+        <p><strong>Alerta:</strong> Avaliar equipe para aplicar abordagem correta.</p>
+    </div>
+
+    <!-- Delegação -->
+    <div class="quadrante delegacao">
+        <h2><i class="fas fa-tasks"></i> Delegação</h2>
+        <p><strong>Descrição:</strong> Distribuir tarefas com clareza e acompanhamento.</p>
+        <p><strong>Exemplo:</strong> Definir responsáveis, prazos e recursos.</p>
+        <p><strong>Vantagens:</strong> Mais tempo para decisões estratégicas.</p>
+        <p><strong>Desvantagens:</strong> Falta de acompanhamento gera erros.</p>
+        <p><strong>Alerta:</strong> Monitorar progresso sem microgerenciar.</p>
+    </div>
+
+    <!-- Feedback e Melhoria -->
+    <div class="quadrante feedback">
+        <h2><i class="fas fa-comments-dollar"></i> Feedback e Melhoria</h2>
+        <p><strong>Descrição:</strong> Revisão contínua do desempenho e processos.</p>
+        <p><strong>Exemplo:</strong> Reuniões semanais de indicadores e performance.</p>
+        <p><strong>Vantagens:</strong> Equipe mais produtiva e engajada.</p>
+        <p><strong>Desvantagens:</strong> Feedback inconsistente desmotiva.</p>
+        <p><strong>Alerta:</strong> Feedback deve ser construtivo, pontual e com follow-up.</p>
+    </div>
+</main>
+
+<footer>
+© 2025 Silvanio Gois — Todos os direitos reservados | <a href="https://www.silvaniogois.com.br" target="_blank">Retornar ao site</a>
+</footer>
+
+<script>
+function filterCategory(cat){
+    const buttons = document.querySelectorAll('.filters button');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    const quadrantes = document.querySelectorAll('.quadrante');
+    quadrantes.forEach(q => {
+        if(cat === 'all'){ q.classList.remove('hidden'); }
+        else {
+            if(q.classList.contains(cat)) q.classList.remove('hidden');
+            else q.classList.add('hidden');
+        }
+    });
+}
+</script>
+
+</body>
+</html>
